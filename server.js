@@ -8,11 +8,12 @@ cluster(function(worker) {
   var fs = require('fs');
 
   app.get('/', function (req, res) {
-    res.sendfile("/Users/dhimil/much-server/index.html");
+    console.log("Index request");
+    res.sendFile(__dirname + "/index.html");
   });
 
   app.get("/img/:id", function(req, res) {
-    file = fs.readFileSync("/Users/dhimil/much-server/a.jpeg");
+    file = fs.readFileSync(__dirname + "/a.jpeg");
     res.send(file);
   });
 
