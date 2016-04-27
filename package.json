@@ -1,0 +1,25 @@
+{
+  "name": "much-server",
+  "version": "1.0.0",
+  "description": "Awesome error finder",
+  "main": "server.js",
+  "dependencies": {
+    "express-cluster": "^0.0.4",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhimil/much-server.git"
+  },
+  "author": "dhimil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhimil/much-server/issues"
+  },
+  "homepage": "https://github.com/dhimil/much-server#readme"
+}
