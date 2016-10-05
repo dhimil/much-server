@@ -9,11 +9,13 @@ cluster(function(worker) {
 
   app.get('/', function (req, res) {
     console.log("Index request");
+    res.set('Connection', 'close');
     res.sendFile(__dirname + "/index.html");
   });
 
   app.get("/img/:id", function(req, res) {
     file = fs.readFileSync(__dirname + "/a.jpeg");
+    res.set('Connection', 'close');
     res.send(file);
   });
 
