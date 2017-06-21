@@ -5,18 +5,29 @@
      <script>
 suc = 0;
 err = 0;
+parallel = 10;
+intervals = [];
 $(document).ready(function(){
-    setInterval(function() {
+  for(var i = 0; i < parallel; i ++) {
+    intervals[i] = setInterval(function() {
       loadImg();
     }, 100);
+  }
+
+  setTimeout(function() {
+    console.log("Clearing now")
+    for(var i = 0; i < parallel; i++) {
+      clearInterval(intervals[i]);
+    }
+  }, (60050));
 });
+
 function loadImg() {
   a = new Date();
   $("<img/>")
     .on('load', function() { suc++; console.log("image loaded correctly"); })
     .on('error', function() { err++; $("body").attr("bgcolor", "red"); console.log("error loading image"); })
     .attr("src", "/img/" + a.getTime());
-;
 }
     </script> 
 </body>
